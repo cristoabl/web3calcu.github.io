@@ -1,4 +1,4 @@
-CHAIN_ID = "0x5";
+const CHAIN_ID = "0x5";
 const CHAIN_NAME = "Goerli";
 const CONTRACT_ADDRESS = "0x989171080E61dED4fca34555656c4221969c5210";
 
@@ -63,7 +63,7 @@ form.addEventListener("submit", (e) => {
         return num1 / num2;
      }
 
-async function connectwallet() {
+async function connectWallet() {
     if (window.ethereum) {
         alert("No injected provider found. Install Metamask.");
     } else {
