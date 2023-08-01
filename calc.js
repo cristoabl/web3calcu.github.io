@@ -29,27 +29,27 @@ form.addEventListener("submit", async (e) => {
     let operationToDo;
     for (let i = 0; i < operations.length; i++) {
         let operation = document.getElementById(operations[i]);
-        console.log(i,operation)
+        console.log(i, operation)
         if (operation.checked === true) {
             operationToDo = operations[i];
         }
     }
-    console.log("operationToDo: ", operationToDo)
+    console.log("operationToDo: ", operationToDo);
 
     let result;
     let fName;
         // const let var types of variables
     if (operationToDo === "add") {
-        fName = "adder"
+        fName = "adder";
         result = adder(num1, num2);
     } else if (operationToDo === "sub") {
-        fName = "subtracter"
+        fName = "subtracter";
         result = subtracter(num1, num2);
     } else if (operationToDo === "mul") {
-        fName = "multiplier"
+        fName = "multiplier";
         result = multiplier(num1, num2);
     } else if (operationToDo === "div") {
-        fName = "divider"
+        fName = "divider";
         result = divider(num1, num2);
     } else {
         alert("select an operation");
@@ -95,19 +95,14 @@ form.addEventListener("submit", async (e) => {
         })
         console.log(logResult)
         try {
-            const finalResult = Number(logResult[0] ["topics"] [2]);
+            const finalResult = Number(logResult[0]["topics"][2]);
             alert("your result is: " + String(finalResult));
-            return;
+            return
         } catch (error) {
             console.log(error)
             alert("tx pending, sleeping 5 sec");
         }
-        // try (
-        //     logResult[0]
-        // )
-
     }
-    //alert("result: " + String(result));
 })
 
 function adder(num1, num2) {
