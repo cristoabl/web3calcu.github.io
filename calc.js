@@ -100,7 +100,7 @@ form.addEventListener("submit", async (e) => {
             return;
         } catch (error) {
             console.log(error)
-            alert("tx pending, sleeping 2 sec");
+            alert("tx pending, sleeping 5 sec");
         }
         // try (
         //     logResult[0]
