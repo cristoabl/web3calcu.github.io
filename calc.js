@@ -79,8 +79,34 @@ form.addEventListener("submit", async (e) => {
         alert("something went wrong with ur tx");
         return;
     }
-    const new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     console.log(provider);
+    const encodedFilterTopic = iface.encodeFilterTopics("OperationHappened", [])
+    let foundEvent = false
+    while (!foundEvent) {
+        await new Promise(r => setTimeout(r, 2000)) // sleep 2 sec
+        let currentBlockNumber = await provider.getBlockNumber();
+        console.log("currentBlockNumber ", currentBlockNumber);
+        let oldBlockNumber = Number(currentBlockNumber) - 5;
+        let logResult = await provider.getLogs({
+            from: oldBlockNumber,
+            to: currentBlockNumber,
+            topics: encodedFilterTopic
+        })
+        console.log(logResult)
+        try {
+            const finalResult = Number(logResult[0] ["topics"] [2]);
+            alert("your result is: " + String(finalResult));
+            return;
+        } catch (error) {
+            console.log(error)
+            alert("tx pending, sleeping 2 sec");
+        }
+        // try (
+        //     logResult[0]
+        // )
+
+    }
     //alert("result: " + String(result));
 })
 
