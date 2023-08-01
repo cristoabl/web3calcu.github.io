@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Web3 Calculator Dapp</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 class="centered">Welcome to the best Calculator Dapp</h1>
+        <button onclick="connectwallet()">Connect Wallet</button>
+        <form class="centered" id="form">
+            <input type="text" id="num1" placeholder="Enter a number here">
+            <input type="text" id="num2" placeholder="Enter another number here"><br>
+            <input type="radio" id="add" autocomplete="off" name="operator">
+            <label for="add">+</label>
+            <input type="radio" id="sub" autocomplete="off" name="operator">
+            <label for="sub">-</label>
+            <input type="radio" id="mul" autocomplete="off" name="operator">
+            <label for="mul">x</label>
+            <input type="radio" id="div" autocomplete="off" name="operator">
+            <label for="div">/</label><br>
+            <input type="submit">
+        </form>
+        <script src="calc.js"></script>
+    </body>
+</html>
