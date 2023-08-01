@@ -84,7 +84,7 @@ form.addEventListener("submit", async (e) => {
     const encodedFilterTopic = iface.encodeFilterTopics("OperationHappened", [])
     let foundEvent = false
     while (!foundEvent) {
-        await new Promise(r => setTimeout(r, 2000)) // sleep 2 sec
+        await new Promise(r => setTimeout(r, 5000)) // sleep 5 sec
         let currentBlockNumber = await provider.getBlockNumber();
         console.log("currentBlockNumber ", currentBlockNumber);
         let oldBlockNumber = Number(currentBlockNumber) - 5;
